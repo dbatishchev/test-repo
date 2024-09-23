@@ -1,0 +1,16 @@
+name: Summarize PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Summarize PR
+      uses: dbatishchev/summarize-pr-action@main
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        openai_api_key: ${{ secrets.OPENAI_API_KEY }}
